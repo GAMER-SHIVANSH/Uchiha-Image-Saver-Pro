@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Uchiha Settings</title>
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>⚙️ Rename Setting</h2>
+  <label>
+    <input type="checkbox" id="renameToggle" />
+    Ask to rename image before saving
+  </label>
+
+  <script>
+    const toggle = document.getElementById("renameToggle");
+
+    chrome.storage.sync.get("renameBeforeDownload", (data) => {
+      toggle.checked = data.renameBeforeDownload || false;
+    });
+
+    toggle.addEventListener("change", () => {
+      chrome.storage.sync.set({ renameBeforeDownload: toggle.checked });
+    });
+  </script>
+</body>
+</html>
