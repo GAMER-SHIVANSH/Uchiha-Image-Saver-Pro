@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Uchiha Image Saver Pro",
+  "version": "4.0",
+  "description": "Convert & Save any image as PNG, JPG, WEBP, or GIF. Rename supported.",
+  "permissions": [
+    "contextMenus",
+    "scripting",
+    "downloads",
+    "storage"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "48": "icons/sharingan.png"
+  }
+}
